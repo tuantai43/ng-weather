@@ -1,0 +1,13 @@
+<div class="tabs">
+  <div class="tab-headers">
+    <div class="tab-header" [class.active]="tabIndex === currentIndex" *ngFor="let tab of tabs; index as tabIndex">
+      <label (click)="selectTab(tab, tabIndex)"> {{ tab.label }} </label>
+      <span class="close" (click)="closeTab(tab, tabIndex)"></span>
+    </div>
+  </div>
+</div>
+<ng-container *ngIf="selectedTab">
+  <div class="tab-content">
+    <ng-container *ngTemplateOutlet="selectedTab.content"></ng-container>
+  </div>
+</ng-container>

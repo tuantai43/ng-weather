@@ -1,0 +1,60 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  padding: 10px;
+}
+
+.tab-headers {
+  display: flex;
+  gap: 8px;
+  overflow: auto;
+}
+
+.tab-header {
+  position: relative;
+  white-space: nowrap;
+}
+
+.tab-header label {
+  color: white;
+  margin-bottom: 0;
+  transition: background-color ease-in-out 0.3s;
+  padding: 8px 31px 8px 8px;
+  background-color: cornflowerblue;
+}
+
+.tab-header label:hover {
+  background-color: midnightblue;
+  cursor: pointer;
+}
+
+.tab-header.active label {
+  background-color: midnightblue;
+}
+
+.tab-header .close {
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  right: 8px;
+  width: 16px;
+  height: 16px;
+  opacity: 0.3;
+}
+.tab-header .close:hover {
+  opacity: 1;
+}
+.tab-header .close:before,
+.tab-header .close:after {
+  position: absolute;
+  content: " ";
+  left: 7px;
+  height: 16px;
+  width: 2px;
+  background-color: white;
+}
+.tab-header .close:before {
+  transform: rotate(45deg);
+}
+.tab-header .close:after {
+  transform: rotate(-45deg);
+}

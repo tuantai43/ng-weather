@@ -59,6 +59,7 @@ export class TabGroupComponent implements AfterContentInit, OnDestroy {
   closeTab(tab: TabItemComponent, index: number): void {
     if (index !== -1) {
       if (this.currentIndex > index) {
+        // If you close a tab before the current tab, the index of the current tab is reduced
         this.currentIndex -= 1;
       } else if (this.currentIndex === index) {
         // If you dynamically select the current tab, it will automatically select the first tab
@@ -67,6 +68,7 @@ export class TabGroupComponent implements AfterContentInit, OnDestroy {
         }
       }
 
+      // Remove tab from tabs list
       this.source.splice(index, 1);
       this.locationService.removeLocation(tab.zipcode);
     }
